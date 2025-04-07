@@ -26,6 +26,18 @@ client.once('ready', () => {
     timezone: 'Asia/Tokyo'
   });
 
+  cron.schedule('0 12 * * 7', () => {
+    channel.send(message.ed_first_message);
+  }, {
+    timezone: 'Asia/Tokyo'
+  });
+
+  cron.schedule('55 20 * * 7', () => {
+    channel.send(message.ed_second_message);
+  }, {
+    timezone: 'Asia/Tokyo'
+  });
+
   console.log(message.schedule_done);
 });
 
